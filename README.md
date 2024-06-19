@@ -12,8 +12,8 @@ If no `v[number]` tag is found, then it returns `v1`
   steps:
       ...
       - name: Increment version from repository's tags
-        id: tages_versioning
-        uses: lucasbiguet/release-versioning@v1
+        id: versioning
+        uses: lucasbiguet/release-versioning@v1.0.0
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
       ...
@@ -21,5 +21,5 @@ If no `v[number]` tag is found, then it returns `v1`
 
 ## Output variables:
 
-**${{ steps.version.outputs.last }}** = *last found version* \
-**${{ steps.version.outputs.next }}** = *next generated version*
+**${{ steps.versioning.outputs.last }}** = *last found version* \
+**${{ steps.versioning.outputs.next }}** = *next generated version*
