@@ -20,7 +20,7 @@ const run = async () => {
 
         orderedTags = tagsRequest.data.filter(t => regExp.test(t.name)).map(t=>t.name).sort((x,y) => x.localeCompare(y)).reverse()
 
-        nextVersionTag = `v${parseInt(orderedTags[0])+1}`
+        nextVersionTag = `v${parseInt(orderedTags[0].substring(1))+1}`
 
         console.log(`last version is ${orderedTags[0]}`)
         console.log(`next version is ${nextVersionTag}`)
